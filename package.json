@@ -10,7 +10,9 @@
   },
   "dependencies": {
     "bcrypt": "^5.1.1",
+    "bcryptjs": "^3.0.2",
     "framer-motion": "^12.9.2",
+    "jsonwebtoken": "^9.0.2",
     "lightningcss": "^1.29.3",
     "mongoose": "^8.14.1",
     "next": "15.3.1",
