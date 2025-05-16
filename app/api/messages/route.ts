@@ -26,7 +26,7 @@ export async function POST(req: NextRequest) {
     const participants = [sender, receiver];
 
     let conversation = await Conversation.findOne({ participants: { $all: participants, $size: 2 } });
-
+console.log(conversation);
     if (!conversation) {
       console.log('Creating new conversation');
       conversation = await Conversation.create({ participants });
@@ -36,7 +36,7 @@ export async function POST(req: NextRequest) {
       sender: sender,
       receiver: receiver,
       content,
-      conversationId: conversation._id,
+      conversationId: conversation.id,
     });
 
     return NextResponse.json(message, { status: 201 });
